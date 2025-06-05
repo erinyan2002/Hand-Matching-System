@@ -52,7 +52,7 @@ import torch
 
 from models.matching import Matching
 from models.utils import (AverageTimer, VideoStreamer,
-                          make_matching_plot_fast, frame2tensor)
+                        make_matching_plot_fast, frame2tensor)
 
 torch.set_grad_enabled(False)
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--input', type=str, default='0',
         help='ID of a USB webcam, URL of an IP camera, '
-             'or path to an image directory or movie file')
+            'or path to an image directory or movie file')
     parser.add_argument(
         '--output_dir', type=str, default=None,
         help='Directory where to write output frames (If None, no output)')
@@ -81,8 +81,8 @@ if __name__ == '__main__':
     parser.add_argument(
         '--resize', type=int, nargs='+', default=[640, 480],
         help='Resize the input image before running inference. If two numbers, '
-             'resize to the exact dimensions, if one number, resize the max '
-             'dimension, if -1, do not resize')
+            'resize to the exact dimensions, if one number, resize the max '
+            'dimension, if -1, do not resize')
 
     parser.add_argument(
         '--superglue', choices={'indoor', 'outdoor'}, default='indoor',
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--max_keypoints', type=int, default=-1,
         help='Maximum number of keypoints detected by Superpoint'
-             ' (\'-1\' keeps all keypoints)')
+            ' (\'-1\' keeps all keypoints)')
     parser.add_argument(
         '--keypoint_threshold', type=float, default=0.005,
         help='SuperPoint keypoint detector confidence threshold')
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     keys = ['keypoints', 'scores', 'descriptors']
 
     vs = VideoStreamer(opt.input, opt.resize, opt.skip,
-                       opt.image_glob, opt.max_length)
+                    opt.image_glob, opt.max_length)
     frame, ret = vs.next_frame()
     assert ret, 'Error when reading the first frame (try different --input?)'
 
@@ -172,11 +172,11 @@ if __name__ == '__main__':
 
     # Print the keyboard help menu.
     print('==> Keyboard control:\n'
-          '\tn: select the current frame as the anchor\n'
-          '\te/r: increase/decrease the keypoint confidence threshold\n'
-          '\td/f: increase/decrease the match filtering threshold\n'
-          '\tk: toggle the visualization of keypoints\n'
-          '\tq: quit')
+        '\tn: select the current frame as the anchor\n'
+        '\te/r: increase/decrease the keypoint confidence threshold\n'
+        '\td/f: increase/decrease the match filtering threshold\n'
+        '\tk: toggle the visualization of keypoints\n'
+        '\tq: quit')
 
     timer = AverageTimer()
 

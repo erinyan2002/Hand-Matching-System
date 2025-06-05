@@ -54,10 +54,10 @@ import torch
 
 from models.matching import Matching
 from models.utils import (compute_pose_error, compute_epipolar_error,
-                          estimate_pose, make_matching_plot,
-                          error_colormap, AverageTimer, pose_auc, read_image,
-                          rotate_intrinsics, rotate_pose_inplane,
-                          scale_intrinsics)
+                        estimate_pose, make_matching_plot,
+                        error_colormap, AverageTimer, pose_auc, read_image,
+                        rotate_intrinsics, rotate_pose_inplane,
+                        scale_intrinsics)
 
 torch.set_grad_enabled(False)
 
@@ -76,7 +76,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--output_dir', type=str, default='dump_match_pairs/',
         help='Path to the directory in which the .npz results and optionally,'
-             'the visualization images are written')
+            'the visualization images are written')
 
     parser.add_argument(
         '--max_length', type=int, default=-1,
@@ -84,8 +84,8 @@ if __name__ == '__main__':
     parser.add_argument(
         '--resize', type=int, nargs='+', default=[640, 480],
         help='Resize the input image before running inference. If two numbers, '
-             'resize to the exact dimensions, if one number, resize the max '
-             'dimension, if -1, do not resize')
+            'resize to the exact dimensions, if one number, resize the max '
+            'dimension, if -1, do not resize')
     parser.add_argument(
         '--resize_float', action='store_true',
         help='Resize the image after casting uint8 to float')
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--max_keypoints', type=int, default=1024,
         help='Maximum number of keypoints detected by Superpoint'
-             ' (\'-1\' keeps all keypoints)')
+            ' (\'-1\' keeps all keypoints)')
     parser.add_argument(
         '--keypoint_threshold', type=float, default=0.005,
         help='SuperPoint keypoint detector confidence threshold')
@@ -117,7 +117,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--eval', action='store_true',
         help='Perform the evaluation'
-             ' (requires ground truth pose and intrinsics)')
+        ' (requires ground truth pose and intrinsics)')
     parser.add_argument(
         '--fast_viz', action='store_true',
         help='Use faster image visualization with OpenCV instead of Matplotlib')
@@ -200,10 +200,10 @@ if __name__ == '__main__':
     print('Will write matches to directory \"{}\"'.format(output_dir))
     if opt.eval:
         print('Will write evaluation results',
-              'to directory \"{}\"'.format(output_dir))
+            'to directory \"{}\"'.format(output_dir))
     if opt.viz:
         print('Will write visualization images to',
-              'directory \"{}\"'.format(output_dir))
+            'directory \"{}\"'.format(output_dir))
 
     timer = AverageTimer(newline=True)
     for i, pair in enumerate(pairs):
@@ -226,7 +226,7 @@ if __name__ == '__main__':
                     results = np.load(matches_path)
                 except:
                     raise IOError('Cannot load matches .npz file: %s' %
-                                  matches_path)
+                                matches_path)
 
                 kpts0, kpts1 = results['keypoints0'], results['keypoints1']
                 matches, conf = results['matches'], results['match_confidence']
@@ -279,7 +279,7 @@ if __name__ == '__main__':
 
             # Write the matches to disk.
             out_matches = {'keypoints0': kpts0, 'keypoints1': kpts1,
-                           'matches': matches, 'match_confidence': conf}
+                        'matches': matches, 'match_confidence': conf}
             np.savez(str(matches_path), **out_matches)
 
         # Keep the matching keypoints.
