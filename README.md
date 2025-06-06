@@ -68,6 +68,9 @@
 > 필요한 패키지는 `requirements.txt`에 모두 포함되어 있습니다.
 
 
+---
+
+
 #  기능 1: 손 사진 2장 비교
 
 ### 사용 방법
@@ -95,7 +98,7 @@ python hand_match.py
 
 
 - ✅ 동일 인물의 손일 가능성이 높은 결과
-- 
+  
 
 ![image](https://github.com/user-attachments/assets/45624d8c-1e37-4f4b-8778-8807f9c6b6fc)
 
@@ -134,11 +137,32 @@ python hand_match.py
 ---
 
 #  기능 2: 여러 손 이미지 자동 비교 및 클러스터링
-pairwise_match_all.py와 cluster_match_results.py는
-폴더 내 모든 손 이미지들을 자동으로 서로 비교하고,
+
+## pairwise_match_all.py와 cluster_match_results.py는 폴더 내 모든 손 이미지들을 자동으로 서로 비교하고,
 같은 사람의 손으로 판단된 이미지들을 클러스터링합니다.
 
+## 실행 방법
+
+```
+python cluster_match_results.py
+```
+
+## 출력 예시(터미널 결과)
+
+
+![image](https://github.com/user-attachments/assets/e7dc54d3-46cf-49a9-b7b3-5a7fbc8cf8c1)
+
+
+## 클러스터링 기술 설명
+
+요소	설명
+매칭 수 기준	100개 이상 → "같은 사람"으로 판단 (조정 가능)
+거리 계산 방식	distance = 1 / (match_count + ε)
+클러스터링 알고리즘	DBSCAN (밀도 기반 클러스터링)
+노이즈 분리	유사한 그룹에 속하지 않는 이미지는 자동으로 제외
 ##  프로젝트 배경
+
+---
 
 이 프로젝트는 **컴퓨터비전 수업의 기말 과제**로 진행했습니다.  
 교수님 강의 자료에서 소개된 SuperPoint와 SuperGlue 모델을 직접 fork하여  
