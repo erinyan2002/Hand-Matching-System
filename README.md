@@ -1,5 +1,8 @@
 ##  손 사진 비교로 동일 인물 판별하기 (SuperPoint + SuperGlue)
 
+![compareHand](https://github.com/user-attachments/assets/e847cc54-4af3-4767-a578-002984518ffd)
+
+
 두 장의 손 사진을 비교해서 **같은 사람인지 아닌지**를 판단하는 프로젝트입니다.  
 딥러닝 모델인 SuperPoint와 SuperGlue를 이용해 **특징점을 자동으로 찾고**, **매칭 정도를 수치로 확인**합니다.
 
