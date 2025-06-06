@@ -1,8 +1,7 @@
 # 🖐️ 손 사진 비교로 동일 인물 판별하기 (SuperPoint + SuperGlue)
 
 
-![Uploading compareHand.![Handspng](https://github.com/user-attachments/assets/0f70257d-b0dc-4bbf-a2d0-ef1db0388f7f)
-gif…]()
+![Handspng](https://github.com/user-attachments/assets/2449cd6f-5d32-4e0b-baf7-c9767bd17fa2)
 
 
 
