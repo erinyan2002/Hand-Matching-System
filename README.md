@@ -1,8 +1,10 @@
 # 🖐️ 손 사진 비교로 동일 인물 판별하기 (SuperPoint + SuperGlue)
 
-<p align="center">
-  <img src="https://i.imgur.com/Dz7s5mp.png" width="200" alt="Hand icon">
-</p>
+
+![Uploading compareHand.![Handspng](https://github.com/user-attachments/assets/0f70257d-b0dc-4bbf-a2d0-ef1db0388f7f)
+gif…]()
+
+
 
 > **"이 손이 누구 손일까?"**  
 > 두 장의 손 사진만 보고 같은 사람인지 아닌지를 맞힐 수 있을까요?
