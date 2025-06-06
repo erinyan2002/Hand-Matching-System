@@ -1,20 +1,17 @@
-# 🖐️ 손 사진을 이용한 동일 인물 판단 프로젝트 (SuperPoint + SuperGlue 기반)
+## 🖐️ 손 사진 비교로 동일 인물 판별하기 (SuperPoint + SuperGlue)
 
-<p align="center">
-  <img src="result_match.png" alt="Matching Result" width="600">
-</p>
-
-이 프로젝트는 **서로 다른 손 사진 두 장**을 비교해서  
-**같은 사람의 손인지**, 또는 **다른 사람의 손인지** 판단하는 실습형 컴퓨터 비전 과제입니다.  
-논문 기반의 모델인 **SuperPoint**와 **SuperGlue**를 사용하여 keypoint를 추출하고 매칭합니다.
+두 장의 손 사진을 비교해서 **같은 사람인지 아닌지**를 판단하는 프로젝트입니다.  
+딥러닝 모델인 SuperPoint와 SuperGlue를 이용해 **특징점을 자동으로 찾고**, **매칭 정도를 수치로 확인**합니다.
 
 ---
 
-##  이 프로젝트는 어떤 걸 하나요?
+## ✅ 프로젝트 핵심 기능
 
-- 손 사진 2장을 넣으면,
-- 특징점을 찾아 서로 연결하고,
-- **얼마나 잘 맞는지(=매칭 수)** 기준으로 동일 인물인지 판단합니다.
+- 손 사진 2장을 비교해 **특징점을 자동으로 추출하고 연결**합니다.
+- 얼마나 많이 연결되었는지를 보고 **같은 사람의 손인지 판단**합니다.
+- 결과는 이미지로 저장되며, **시각적으로 매칭 상태를 확인**할 수 있습니다.
+
+---
 
 ### 사용된 모델
 
@@ -25,18 +22,27 @@
 
 ---
 
-## 📂 폴더 구조 설명
+##  폴더 구조 (중요한 것만)
 
-```bash
-├── assets/               # 손 사진을 넣는 폴더
-│   └── hand/             # 비교할 손 이미지가 들어가는 폴더
-│       ├── 1.jpg         # 예시 이미지
-│       ├── 2.jpg         # 예시 이미지
-│       └── ...
-├── models/               # 모델 코드 (SuperPoint, SuperGlue)
-│   └── weights/          # 사전학습된 모델 가중치
-├── result/               # 매칭 결과 이미지 저장 폴더
-├── hand_match.py         # 메인 실행 코드
-├── result_match.png      # 결과 이미지 출력 (자동 생성됨)
-├── requirements.txt      # 필요한 패키지 목록
-└── README.md             # 설명서 (본 문서)
+1. assets/hand/ ← 손 사진 2장을 여기에 넣음
+2. models/ ← SuperPoint, SuperGlue 코드 + 가중치
+3. hand_match.py ← 메인 실행 코드
+4. result_match.png ← 결과 이미지 (자동 생성)
+
+---
+
+
+##  실행 방법 
+
+1. 손 사진을 `assets/hand/` 폴더에 넣기  
+   예: `2.jpg`, `4.jpg`
+
+2. `hand_match.py` 안에서 비교할 파일명 수정:
+
+```python
+img0 = load_image_gray("assets/hand/4.jpg")
+img1 = load_image_gray("assets/hand/2.jpg")
+
+3. 실행
+python hand_match.py
+

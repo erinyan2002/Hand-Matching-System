@@ -29,8 +29,8 @@ def load_image_gray(path):
     return image
 
 # 비교할 이미지 지정
-img0 = load_image_gray("assets/hand/4.jpg")  # 설정 필요
-img1 = load_image_gray("assets/hand/2.jpg")  # 설정 필요
+img0 = load_image_gray("assets/hand3/2.jpg")  # 설정 필요
+img1 = load_image_gray("assets/hand3/3.jpg")  # 설정 필요
 
 # 텐서로 변환
 inp0 = frame2tensor(img0, device)
