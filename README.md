@@ -41,6 +41,20 @@
 ---
 
 
+##  개발 환경
+
+- Python 3.12
+- PyTorch 2.x
+- OpenCV 4.x
+- 실행 환경: Windows 11 (VS Code + PowerShell)
+
+> 필요한 패키지는 `requirements.txt`에 모두 포함되어 있습니다.
+
+
+---
+
+
+
 ##  실행 방법 
 
 1. 손 사진을 `assets/hand/` 폴더에 넣기  
@@ -117,6 +131,14 @@ python hand_match.py
 - 내가 fork한 저장소: https://github.com/erinyan2002/SuperGluePretrainedNetwork
 
 ---
+
+
+##  확장 가능성
+
+-  얼굴, 귀, 발 등 다른 신체 부위에도 동일 방식으로 적용 가능
+-  웹캠과 연결해 **실시간 인증 시스템**으로 확장 가능
+-  matching 결과를 feature로 활용하여 **손 인증 classifier 훈련** 가능
+
 
 ##  결론
 
