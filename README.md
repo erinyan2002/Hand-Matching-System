@@ -226,6 +226,9 @@ python pairwise_match_all.py
 -  얼굴, 귀, 발 등 다른 신체 부위에도 동일 방식으로 적용 가능
 -  웹캠과 연결해 **실시간 인증 시스템**으로 확장 가능
 -  matching 결과를 feature로 활용하여 **손 인증 classifier 훈련** 가능
+-  
+
+---
 
 
 ##  결론
