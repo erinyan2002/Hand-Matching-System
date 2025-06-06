@@ -123,8 +123,7 @@ python hand_match.py
 
 #  기능 2: 여러 손 이미지 자동 비교 및 클러스터링
 
-## pairwise_match_all.py와 cluster_match_results.py는 폴더 내 모든 손 이미지들을 자동으로 서로 비교하고,
-같은 사람의 손으로 판단된 이미지들을 클러스터링합니다.
+cluster_match_results.py는 폴더 내 모든 손 이미지들을 자동으로 서로 비교하고, 같은 사람의 손으로 판단된 이미지들을 클러스터링합니다.
 
 ## 실행 방법
 
